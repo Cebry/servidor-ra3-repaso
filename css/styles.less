@@ -1,0 +1,191 @@
+// /* SCSS HEX */
+// @raisin-black     : #211a1dff;
+// @han-purple       : #6320eeff;
+// @medium-slate-blue: #8075ffff;
+// @magnolia         : #f8f0fbff;
+// @ash-gray         : #cad5caff;
+
+// /* SCSS RGB */
+// @raisin-black     : rgba(33, 26, 29, 1);
+// @han-purple       : rgba(99, 32, 238, 1);
+// @medium-slate-blue: rgba(128, 117, 255, 1);
+// @magnolia         : rgba(248, 240, 251, 1);
+// @ash-gray         : rgba(202, 213, 202, 1);
+
+/* SCSS HSL */
+@raisin-black     : hsla(334, 12%, 12%, 1);
+@han-purple       : hsla(260, 86%, 53%, 1);
+@medium-slate-blue: hsla(245, 100%, 73%, 1);
+@magnolia         : hsla(284, 58%, 96%, 1);
+@ash-gray         : hsla(120, 12%, 81%, 1);
+
+/* SCSS Gradient */
+@gradient-top         : linear-gradient(0deg, #211a1dff, #6320eeff, #8075ffff, #f8f0fbff, #cad5caff);
+@gradient-right       : linear-gradient(90deg, #211a1dff, #6320eeff, #8075ffff, #f8f0fbff, #cad5caff);
+@gradient-bottom      : linear-gradient(180deg, #211a1dff, #6320eeff, #8075ffff, #f8f0fbff, #cad5caff);
+@gradient-left        : linear-gradient(270deg, #211a1dff, #6320eeff, #8075ffff, #f8f0fbff, #cad5caff);
+@gradient-top-right   : linear-gradient(45deg, #211a1dff, #6320eeff, #8075ffff, #f8f0fbff, #cad5caff);
+@gradient-bottom-right: linear-gradient(135deg, #211a1dff, #6320eeff, #8075ffff, #f8f0fbff, #cad5caff);
+@gradient-top-left    : linear-gradient(225deg, #211a1dff, #6320eeff, #8075ffff, #f8f0fbff, #cad5caff);
+@gradient-bottom-left : linear-gradient(315deg, #211a1dff, #6320eeff, #8075ffff, #f8f0fbff, #cad5caff);
+@gradient-radial      : radial-gradient(#211a1dff, #6320eeff, #8075ffff, #f8f0fbff, #cad5caff);
+
+* {
+    .font-color(@raisin-black);
+    .transicion();
+    font-family: Roboto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        .font-color(@medium-slate-blue)
+    }
+}
+
+li,
+ul,
+figure {
+    padding: 0;
+    margin : 0;
+}
+
+.bg-color(@color) {
+    background-color: @color;
+}
+
+.font-color(@color) {
+    color: @color;
+}
+
+.sombra {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+        0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.borde {
+    border: 1px solid rgb(100, 100, 100);
+}
+
+.transicion {
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.cuadrado {
+    border-radius: 0;
+}
+
+.flexible {
+    display: flex;
+}
+
+.grid-6 {
+    display              : grid;
+    gap                  : 0.5rem;
+    grid-template-columns: repeat(6, 1fr)
+}
+
+.flexible-vertical {
+    .flexible();
+    flex-direction: column;
+}
+
+main {
+    .flexible-vertical();
+    flex-grow: 1;
+    .bg-color(@magnolia);
+    flex-wrap: wrap;
+    width    : 80%;
+    margin   : 0 auto;
+}
+
+header {
+    padding-left: 1rem;
+}
+
+section {
+    border-top: 1px solid @han-purple;
+    padding   : 1rem;
+}
+
+form {
+    .flexible-vertical();
+    gap: 1rem;
+
+    &>p {
+        text-align: center;
+    }
+}
+
+input {
+    .cuadrado();
+    .borde();
+
+    text-align: center;
+    padding   : 0.5rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+        font-size: 1.2rem;
+        .bg-color(@medium-slate-blue);
+    }
+}
+
+body {
+    .flexible-vertical();
+    .bg-color(@ash-gray);
+    min-height: 100vh;
+
+    &>header,
+    &>footer {
+        .bg-color(@medium-slate-blue);
+
+        & a:hover {
+            .font-color(@magnolia);
+        }
+    }
+}
+
+nav {
+    .bg-color(@han-purple);
+
+    &>ul {
+        .flexible();
+        flex-wrap: wrap;
+
+        &>li>a {
+            display: inline-block;
+            padding: 1rem;
+
+            &:hover,
+            &:active,
+            &:focus {
+                .bg-color(@raisin-black);
+                .font-color(@han-purple);
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+button {
+    .bg-color(@han-purple);
+    .cuadrado();
+    border    : none;
+    text-align: center;
+    padding   : 0.5rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+        font-size: 1.2rem;
+        .bg-color(@raisin-black);
+        .font-color(@han-purple);
+    }
+}
