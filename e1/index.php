@@ -45,9 +45,9 @@ function ejercicio()
 {
     if (isset($_POST['submit'])) {
         echo '<p>' . procesaFormulario() . '</p>';
-        echo '<p><a href="">Repeat</a></p>';
+        echo '<p><a href="">Repetir</a></p>';
     } else {
-        // TODO: Pedir numero minimo y maximo
+        // DONE: Pedir numero minimo y maximo
         include  'minMaxForm.html';
     }
 }
@@ -57,9 +57,9 @@ function procesaFormulario()
     $min = floor($_POST['min']);
     $max = floor($_POST['max']);
     if ($min <= $max) {
-        //TODO: mostrar número aleatorio entre el minimo y el máximo
+        //DONE: mostrar número aleatorio entre el minimo y el máximo
         return floor(rand($min, $max));
     } else {
-        return "Minimun number must be lower than maximun number.";
+        return "Error, el mínimo debe ser menor que el máximo.";
     }
 }

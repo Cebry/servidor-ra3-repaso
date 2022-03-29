@@ -24,4 +24,4 @@
     } ?>
     <button type="submit" name="submit" value="dimensiones">Dibujar</button>
 </form>
-<a href="">Elegir otra forma</a>
+<p><a href="">Elegir otra forma</a></p>

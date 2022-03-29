@@ -57,7 +57,7 @@ function procesaFormulario()
     $password = limpiarDato($_POST['password']);
     $repeatPassword = limpiarDato($_POST['repeatPassword']);
 
-    return $password == $repeatPassword ? 'They\'re equal' : 'They\'re different';
+    return $password == $repeatPassword ? 'Son iguales.' : 'Son diferentes.';
 }
 
 function limpiarDato($dato)

@@ -92,7 +92,7 @@ function ejercicio()
                     $msg = drawRectangle($ancho, $alto, $color);
                     break;
             }
-            return $msg . '<a href="">Repetir</a>';
+            return $msg . '<p><a href="">Repetir</a></p>';
         }
 
         if ($_POST['submit'] == 'forma') {
